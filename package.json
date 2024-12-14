@@ -1,0 +1,24 @@
+{
+  "name": "restaurant-reserve",
+  "version": "1.0.0",
+  "main": "server.ts",
+  "author": "",
+  "license": "ISC",
+  "description": "",
+  "type": "module",
+  "scripts": {
+    "prestart": "npx tsc",
+    "start": "node --experimental-strip-types src/app.ts",
+    "dev": "node --watch --experimental-strip-types src/app.ts"
+  },
+  "dependencies": {
+    "express": "^4.21.2",
+    "zod": "^3.24.1"
+  },
+  "devDependencies": {
+    "@total-typescript/ts-reset": "^0.6.1",
+    "@types/express": "^5.0.0",
+    "@types/node": "^22.10.2",
+    "typescript": "^5.7.2"
+  }
+}

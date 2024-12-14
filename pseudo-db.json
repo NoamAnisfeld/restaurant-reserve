@@ -1,0 +1,199 @@
+{
+  "diningTables": [
+    {
+      "seats": 4
+    },
+    {
+      "seats": 2
+    },
+    {
+      "seats": 5
+    },
+    {
+      "seats": 8
+    },
+    {
+      "seats": 4
+    },
+    {
+      "seats": 2
+    },
+    {
+      "seats": 5
+    },
+    {
+      "seats": 8
+    }
+  ],
+  "timeSlots": [
+    {
+      "hour": 11,
+      "availability": [
+        "available",
+        "reserved",
+        "available",
+        "available",
+        "reserved",
+        "available",
+        "available",
+        "available"
+      ]
+    },
+    {
+      "hour": 12,
+      "availability": [
+        "available",
+        "available",
+        "available",
+        "reserved",
+        "available",
+        "available",
+        "available",
+        "reserved"
+      ]
+    },
+    {
+      "hour": 13,
+      "availability": [
+        "reserved",
+        "available",
+        "available",
+        "available",
+        "available",
+        "reserved",
+        "available",
+        "available"
+      ]
+    },
+    {
+      "hour": 14,
+      "availability": [
+        "available",
+        "available",
+        "reserved",
+        "available",
+        "available",
+        "available",
+        "reserved",
+        "available"
+      ]
+    },
+    {
+      "hour": 15,
+      "availability": [
+        "available",
+        "available",
+        "available",
+        "available",
+        "reserved",
+        "available",
+        "available",
+        "reserved"
+      ]
+    },
+    {
+      "hour": 16,
+      "availability": [
+        "reserved",
+        "available",
+        "available",
+        "reserved",
+        "available",
+        "available",
+        "available",
+        "available"
+      ]
+    },
+    {
+      "hour": 17,
+      "availability": [
+        "available",
+        "reserved",
+        "available",
+        "available",
+        "available",
+        "reserved",
+        "available",
+        "available"
+      ]
+    },
+    {
+      "hour": 18,
+      "availability": [
+        "available",
+        "available",
+        "reserved",
+        "available",
+        "available",
+        "available",
+        "available",
+        "reserved"
+      ]
+    },
+    {
+      "hour": 19,
+      "availability": [
+        "reserved",
+        "available",
+        "available",
+        "available",
+        "reserved",
+        "available",
+        "available",
+        "available"
+      ]
+    },
+    {
+      "hour": 20,
+      "availability": [
+        "available",
+        "available",
+        "reserved",
+        "available",
+        "available",
+        "reserved",
+        "available",
+        "available"
+      ]
+    },
+    {
+      "hour": 21,
+      "availability": [
+        "available",
+        "reserved",
+        "available",
+        "available",
+        "available",
+        "available",
+        "reserved",
+        "available"
+      ]
+    },
+    {
+      "hour": 22,
+      "availability": [
+        "available",
+        "available",
+        "available",
+        "reserved",
+        "available",
+        "available",
+        "available",
+        "reserved"
+      ]
+    },
+    {
+      "hour": 23,
+      "availability": [
+        "reserved",
+        "available",
+        "available",
+        "available",
+        "reserved",
+        "available",
+        "available",
+        "available"
+      ]
+    }
+  ]
+}
