@@ -7,9 +7,10 @@
   "description": "",
   "type": "module",
   "scripts": {
-    "prestart": "npx tsc",
-    "start": "node --experimental-strip-types src/app.ts",
-    "dev": "node --watch --experimental-strip-types src/app.ts"
+    "build": "cd front && npm run build",
+    "prestart": "tsc && npm run build",
+    "start": "node --experimental-strip-types app.ts",
+    "dev": "node --watch --experimental-strip-types app.ts"
   },
   "dependencies": {
     "express": "^4.21.2",
