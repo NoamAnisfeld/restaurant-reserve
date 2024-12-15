@@ -27,7 +27,7 @@ function App() {
             key={index}
             name={`Table number ${index + 1}`}
             seats={table.seats}
-            available={timeslots.data[currentSlot].availability[index] === 'available'}
+            available={timeslots.data[currentSlot].availability[index]}
           />
         )}
       </div>

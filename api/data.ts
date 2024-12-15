@@ -46,10 +46,10 @@ async function reserveDiningTable(hour: number, diningTable: number) {
     }
 
     const availability = await getAvailableDiningTables(hour);
-    if (availability[diningTable] !== 'available') {
+    if (!availability[diningTable]) {
         throw new Error('dining table is not available');
     }
-    timeslots[hour].availability[diningTable] = 'reserved';
+    timeslots[hour].availability[diningTable] = false;
     await persistData({ diningTables, timeslots });
 }
 

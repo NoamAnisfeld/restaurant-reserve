@@ -1,7 +1,7 @@
 import { useQuery } from "@tanstack/react-query";
 import { fetchJSON } from "./utils";
 import { z } from 'zod';
-import { diningTableSchema, timeslotSchema, availabilitySchema } from "../../common/schemas.ts";
+import { diningTableSchema, timeslotSchema } from "../../common/schemas.ts";
 
 export {
     useQueryDiningTables,
@@ -29,7 +29,7 @@ function useQueryTimeslot(hour: number) {
     return useQuery({
         queryKey: ['timeslots', hour],
         queryFn: () => fetchJSON(`/api/timeslots/${hour}`),
-        select: data => availabilitySchema.parse(data),
+        select: data => z.array(z.boolean()).parse(data),
     });
 }
 

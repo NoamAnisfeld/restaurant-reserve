@@ -29,170 +29,170 @@
     {
       "hour": 11,
       "availability": [
-        "available",
-        "reserved",
-        "available",
-        "available",
-        "reserved",
-        "available",
-        "available",
-        "available"
+        true,
+        false,
+        true,
+        true,
+        false,
+        true,
+        true,
+        true
       ]
     },
     {
       "hour": 12,
       "availability": [
-        "available",
-        "available",
-        "available",
-        "reserved",
-        "available",
-        "available",
-        "available",
-        "reserved"
+        true,
+        true,
+        true,
+        false,
+        true,
+        true,
+        true,
+        false
       ]
     },
     {
       "hour": 13,
       "availability": [
-        "reserved",
-        "available",
-        "available",
-        "available",
-        "available",
-        "reserved",
-        "available",
-        "available"
+        false,
+        true,
+        true,
+        true,
+        true,
+        false,
+        true,
+        true
       ]
     },
     {
       "hour": 14,
       "availability": [
-        "available",
-        "available",
-        "reserved",
-        "available",
-        "available",
-        "available",
-        "reserved",
-        "available"
+        true,
+        true,
+        false,
+        true,
+        true,
+        true,
+        false,
+        true
       ]
     },
     {
       "hour": 15,
       "availability": [
-        "available",
-        "available",
-        "available",
-        "available",
-        "reserved",
-        "available",
-        "available",
-        "reserved"
+        true,
+        true,
+        true,
+        true,
+        false,
+        true,
+        true,
+        false
       ]
     },
     {
       "hour": 16,
       "availability": [
-        "reserved",
-        "available",
-        "available",
-        "reserved",
-        "available",
-        "available",
-        "available",
-        "available"
+        false,
+        true,
+        true,
+        false,
+        true,
+        true,
+        true,
+        true
       ]
     },
     {
       "hour": 17,
       "availability": [
-        "available",
-        "reserved",
-        "available",
-        "available",
-        "available",
-        "reserved",
-        "available",
-        "available"
+        true,
+        false,
+        true,
+        true,
+        true,
+        false,
+        true,
+        true
       ]
     },
     {
       "hour": 18,
       "availability": [
-        "available",
-        "available",
-        "reserved",
-        "available",
-        "available",
-        "available",
-        "available",
-        "reserved"
+        true,
+        true,
+        false,
+        true,
+        true,
+        true,
+        true,
+        false
       ]
     },
     {
       "hour": 19,
       "availability": [
-        "reserved",
-        "available",
-        "available",
-        "available",
-        "reserved",
-        "available",
-        "available",
-        "available"
+        false,
+        true,
+        true,
+        true,
+        false,
+        true,
+        true,
+        true
       ]
     },
     {
       "hour": 20,
       "availability": [
-        "available",
-        "available",
-        "reserved",
-        "available",
-        "available",
-        "reserved",
-        "available",
-        "available"
+        true,
+        true,
+        false,
+        true,
+        true,
+        false,
+        true,
+        true
       ]
     },
     {
       "hour": 21,
       "availability": [
-        "available",
-        "reserved",
-        "available",
-        "available",
-        "available",
-        "available",
-        "reserved",
-        "available"
+        true,
+        false,
+        true,
+        true,
+        true,
+        true,
+        false,
+        true
       ]
     },
     {
       "hour": 22,
       "availability": [
-        "available",
-        "available",
-        "available",
-        "reserved",
-        "available",
-        "available",
-        "available",
-        "reserved"
+        true,
+        true,
+        true,
+        false,
+        true,
+        true,
+        true,
+        false
       ]
     },
     {
       "hour": 23,
       "availability": [
-        "reserved",
-        "available",
-        "available",
-        "available",
-        "reserved",
-        "available",
-        "available",
-        "available"
+        false,
+        true,
+        true,
+        true,
+        false,
+        true,
+        true,
+        true
       ]
     }
   ]
