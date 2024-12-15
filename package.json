@@ -8,9 +8,8 @@
   "type": "module",
   "scripts": {
     "build": "cd front && npm run build",
-    "prestart": "tsc && npm run build",
     "start": "node --experimental-strip-types app.ts",
-    "dev": "node --watch --experimental-strip-types app.ts"
+    "dev": "concurrently \"cd front && npm run dev\" \"node --watch --experimental-strip-types app.ts\" "
   },
   "dependencies": {
     "express": "^4.21.2",
@@ -20,6 +19,7 @@
     "@total-typescript/ts-reset": "^0.6.1",
     "@types/express": "^5.0.0",
     "@types/node": "^22.10.2",
+    "concurrently": "^9.1.0",
     "typescript": "^5.7.2"
   }
 }
