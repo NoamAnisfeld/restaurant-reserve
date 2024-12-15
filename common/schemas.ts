@@ -1,7 +1,7 @@
 import { z } from 'zod'
 
-export { diningTableSchema, availabilitySchema, timeSlotSchema }
-export type { DiningTable, Availability, TimeSlot }
+export { diningTableSchema, availabilitySchema, timeslotSchema }
+export type { DiningTable, Availability, Timeslot }
 
 const {
     number,
@@ -15,11 +15,11 @@ const diningTableSchema = object({
 
 const availabilitySchema = array(z.enum(['available', 'reserved']));
 
-const timeSlotSchema = object({
+const timeslotSchema = object({
     hour: number().min(0).max(23),
     availability: availabilitySchema,
 });
 
 type DiningTable = z.infer<typeof diningTableSchema>;
 type Availability = z.infer<typeof availabilitySchema>;
-type TimeSlot = z.infer<typeof timeSlotSchema>;
+type Timeslot = z.infer<typeof timeslotSchema>;

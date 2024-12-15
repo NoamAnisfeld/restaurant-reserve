@@ -1,17 +1,17 @@
 import fs from 'node:fs/promises';
 import { z } from 'zod';
-import { diningTableSchema, timeSlotSchema } from '../common/schemas.ts';
-import type { DiningTable, TimeSlot } from '../common/schemas.ts';
+import { diningTableSchema, timeslotSchema } from '../common/schemas.ts';
+import type { DiningTable, Timeslot } from '../common/schemas.ts';
 
 export {
     getDiningTables,
-    getAllTimeSlots,
+    getAllTimeslots,
     getAvailableDiningTables,
     reserveDiningTable,
 }
 
 let diningTables: DiningTable[] = [];
-let timeSlots: TimeSlot[] = [];
+let timeslots: Timeslot[] = [];
 let initialized = false;
 
 async function getDiningTables() {
@@ -21,11 +21,11 @@ async function getDiningTables() {
     return diningTables;
 }
 
-async function getAllTimeSlots() {
+async function getAllTimeslots() {
     if (!initialized) {
         await initData();
     }
-    return timeSlots;
+    return timeslots;
 }
 
 async function getAvailableDiningTables(hour: number) {
@@ -33,7 +33,7 @@ async function getAvailableDiningTables(hour: number) {
         await initData();
     }
 
-    const slot = timeSlots.find(slot => slot.hour === hour);
+    const slot = timeslots.find(slot => slot.hour === hour);
     if (!slot) {
         throw new Error('invalid hour');
     }
@@ -49,8 +49,8 @@ async function reserveDiningTable(hour: number, diningTable: number) {
     if (availability[diningTable] !== 'available') {
         throw new Error('dining table is not available');
     }
-    timeSlots[hour].availability[diningTable] = 'reserved';
-    await persistData({ diningTables, timeSlots });
+    timeslots[hour].availability[diningTable] = 'reserved';
+    await persistData({ diningTables, timeslots });
 }
 
 async function initData() {
@@ -59,23 +59,23 @@ async function initData() {
         const json = JSON.parse(data);
         const parsed = z.object({
             diningTables: z.array(diningTableSchema),
-            timeSlots: z.array(timeSlotSchema),
+            timeslots: z.array(timeslotSchema),
         }).parse(json);
 
-        parsed.timeSlots.forEach(slot => {
+        parsed.timeslots.forEach(slot => {
             if (slot.availability.length !== parsed.diningTables.length) {
                 throw new Error('corroupted data: availability array length doesn\'t match number of dining table');
             }
         });
         
-        ({ diningTables, timeSlots } = parsed);
+        ({ diningTables, timeslots } = parsed);
         initialized = true;
     } catch (error) {
         throw new Error('failed to read data');
     }
 }
 
-async function persistData(data: { diningTables: DiningTable[], timeSlots: TimeSlot[] }) {
+async function persistData(data: { diningTables: DiningTable[], timeslots: Timeslot[] }) {
     try {
         const jsonText = JSON.stringify(data, null, 2);
         await fs.writeFile('pseudo-db.json', jsonText);

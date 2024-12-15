@@ -1,9 +1,9 @@
 import { formatTime } from "@/utils";
-import { TimeSlot } from "../../../common/schemas"
+import { Timeslot } from "../../../common/schemas"
 import { Card } from "@/components/ui/card";
 
 interface TimeslotSelectProps {
-    slots: TimeSlot[];
+    slots: Timeslot[];
     currentSlot: number;
     onSlotChange: (newSlot: number) => void;
 }
