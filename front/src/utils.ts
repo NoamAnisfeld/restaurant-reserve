@@ -1,6 +1,7 @@
 export {
     fetchJSON,
     postJSON,
+    formatTime,
 }
 
 async function fetchJSON(url: string): Promise<unknown> {
@@ -17,4 +18,8 @@ async function postJSON(url: string, data: unknown) {
         },
         body: JSON.stringify(data),
     })
+}
+
+function formatTime(hours: number, minutes = 0) {
+    return `${hours.toString()}:${minutes.toString().padStart(2, '0')}`;
 }
