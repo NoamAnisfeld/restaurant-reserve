@@ -28,17 +28,19 @@ export default function DiningTableCard({
             <CardContent>
                 {
                     available
-                        ? <>
-                            Available
+                        ? <div className="flex gap-2 items-center justify-center">
+                            <span>Available</span>
                             <ReserveConfirmation
                                 tableName={name}
                                 timeString={formatTime(hour)}
-                                onConfirm={(closeDialogFn) => 
+                                onConfirm={(closeDialogFn) =>
                                     reserveMutation.mutate(undefined, { onSuccess: closeDialogFn })
                                 }
                             />
-                        </>
-                        : 'Reserved'
+                        </div>
+                        : <span className="font-bold">
+                            Reserved
+                        </span>
                 }
             </CardContent>
         </Card>

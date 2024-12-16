@@ -17,7 +17,11 @@ export default function ReserveConfirmation({
 
     return (
         <Dialog open={isOpen} onOpenChange={setIsOpen}>
-            <DialogTrigger>Reserve</DialogTrigger>
+            <DialogTrigger asChild>
+                <Button>
+                    Reserve
+                </Button>
+            </DialogTrigger>
             <DialogContent className="w-fit pe-14">
                 <DialogHeader className="text-balance">
                     <DialogTitle>Are you sure you want to reserve {tableName} for {timeString}?</DialogTitle>

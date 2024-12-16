@@ -20,7 +20,13 @@ function App() {
 
   return (
     <>
-      <TimeslotSelect slots={timeslots.data} currentSlot={currentSlot} onSlotChange={setCurrentSlot} />
+      <div className='flex justify-around my-4'>
+        <h1>Anisfeld Restaurant</h1>
+        <div className='flex gap-4 items-center'>
+          <span>Choose hour:</span>
+          <TimeslotSelect slots={timeslots.data} currentSlot={currentSlot} onSlotChange={setCurrentSlot} />
+        </div>
+      </div>
       <div className='flex flex-wrap justify-center'>
         {diningTables.data.map((table, index) =>
           <DiningTableCard
