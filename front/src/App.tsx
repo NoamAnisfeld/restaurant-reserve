@@ -25,8 +25,9 @@ function App() {
         {diningTables.data.map((table, index) =>
           <DiningTableCard
             key={index}
-            name={`Table number ${index + 1}`}
+            diningTableIndex={index}
             seats={table.seats}
+            hour={timeslots.data[currentSlot].hour}
             available={timeslots.data[currentSlot].availability[index]}
           />
         )}
