@@ -20,9 +20,11 @@ function App() {
 
   return (
     <>
-      <div className='flex justify-around my-4'>
-        <h1>Anisfeld Restaurant</h1>
-        <div className='flex gap-4 items-center'>
+      <div className='flex flex-wrap gap-4 items-center justify-around'>
+        <h1 className='my-4'>
+          Anisfeld Restaurant
+        </h1>
+        <div className='flex gap-4 items-center my-4'>
           <span>Choose hour:</span>
           <TimeslotSelect slots={timeslots.data} currentSlot={currentSlot} onSlotChange={setCurrentSlot} />
         </div>
