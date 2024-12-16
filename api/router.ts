@@ -1,5 +1,5 @@
 import express, { type ErrorRequestHandler } from "express";
-import { getAvailableDiningTables, getDiningTables, getAllTimeslots, reserveDiningTable } from "./data.ts";
+import { getDiningTables, getAllTimeslots, getTimeslot, reserveDiningTable } from "./data.ts";
 
 const router = express.Router();
 export default router;
@@ -22,7 +22,7 @@ router.get('/timeslots', async (_req, res, next) => {
 
 router.get('/timeslot/:hour', async (req, res, next) => {
     try {
-        res.send(await getAvailableDiningTables(Number(req.params.hour)));
+        res.send(await getTimeslot(Number(req.params.hour)));
     } catch (error) {
         next(error);
     }

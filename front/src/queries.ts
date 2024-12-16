@@ -1,5 +1,5 @@
-import { useQuery } from "@tanstack/react-query";
-import { fetchJSON } from "./utils";
+import { useMutation, useQuery, useQueryClient } from "@tanstack/react-query";
+import { fetchJSON, postJSON } from "./utils";
 import { z } from 'zod';
 import { diningTableSchema, timeslotSchema } from "../../common/schemas.ts";
 
@@ -7,6 +7,7 @@ export {
     useQueryDiningTables,
     useQueryAllTimeslots,
     useQueryTimeslot,
+    useMutationReserveDiningTable,
 }
 
 function useQueryDiningTables() {
@@ -28,8 +29,16 @@ function useQueryAllTimeslots() {
 function useQueryTimeslot(hour: number) {
     return useQuery({
         queryKey: ['timeslots', hour],
-        queryFn: () => fetchJSON(`/api/timeslots/${hour}`),
-        select: data => z.array(z.boolean()).parse(data),
+        queryFn: () => fetchJSON(`/api/timeslot/${hour}`),
+        select: data => timeslotSchema.parse(data),
     });
 }
 
+function useMutationReserveDiningTable(hour: number, diningTable: number) {
+    const queryClient = useQueryClient();
+
+    return useMutation({
+        mutationFn: () => postJSON('/api/reserve', { hour, diningTable }),
+        onSuccess: () => queryClient.invalidateQueries({ queryKey: ['timeslots'] }),
+    });
+}
